@@ -127,6 +127,12 @@ app.get('/check-login', function(req,res){
         res.send('You are not logged in ');
     }
 });
+// implement logout function
+app.get('/logout', function(req,res){
+    //remove the auth object
+    delete req.session.auth;
+    res.send('logged out');
+});
 // getting articles information with no SQL injection
 app.get('/articles/:articleName', function(req, res){
     // database functioning cheking
