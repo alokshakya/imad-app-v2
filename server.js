@@ -72,6 +72,10 @@ app.post('/create-user', function(req,res){
     
 });
 // login the user
+/*
+check login using command
+curl -XPOST -H 'Content-Type:application/json' --data '{"username":"alokshakya","password":"alokshakya"}' http://alokshakya.imad.hasura-app.io/login
+*/
 app.post('/login', function(req,res){
     // fetch user name and password from body
     var username=req.body.username;
