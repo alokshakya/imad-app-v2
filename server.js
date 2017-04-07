@@ -1,6 +1,7 @@
 var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
+var crpto = require('crypto');
 var Pool = require('pg').Pool;
 var config = {
   host: 'db.imad.hasura-app.io',
@@ -32,6 +33,16 @@ app.get('/test-db', function(req, res){
         }
     });
     
+});
+function hash(input, salt){
+    //512 is the key length of hashed value.
+    var hashed= crypto.pbkdf2(input, salt, 100000, 512, 'sha512');
+    return hashed.toString('hex');
+}
+app.get('/hash/:input', function(req,res){
+    var salt ='this-is-random-salt';
+    var hashedString = hash(req.params.input,salt);
+    res.send(hashedString);
 });
 // getting articles information with no SQL injection
 app.get('/articles/:articleName', function(req, res){
