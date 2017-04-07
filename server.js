@@ -49,6 +49,12 @@ app.get('/hash/:input', function(req,res){
 });
 
 //create user function
+//
+/*
+use this command to check post method using curl commands
+ curl -XPOST -H 'Content-Type:application/json' --data '{"username":"alokshakya","password":"alokshakya"}' http://alokshakya.imad.hasura-app.io/create-user
+*/
+//
 app.post('/create-user', function(req,res){
     // fetch user name and password from body
     var username=req.body.username;
