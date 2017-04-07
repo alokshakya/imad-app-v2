@@ -71,6 +71,38 @@ app.post('/create-user', function(req,res){
     });
     
 });
+// login the user
+app.post('/login', function(req,res){
+    // fetch user name and password from body
+    var username=req.body.username;
+    var password=req.body.password;
+    pool.query('SELECT * FROM "user" WHERE username=$1',[username], function(err,result){
+        if(err){
+            res.status(500).send(err.toString());
+        }
+        else{
+            if(result.rows===0)
+            {
+                res.status(403).send("username does not exists");
+            }
+            else{
+                //Match the password
+                var dbString=result.rows[0].password;//value of password column of first row of result
+                var salt=dbString.split('$')[2];//now create hash using salt value
+                var hashedPassword=hash(password,salt);
+                if(hashedPassword==dbString){
+                    res.send("user succesfully logged :"+username);
+                }
+                else{
+                    res.status(503).send("password does not matches");
+                }
+                
+            }
+            
+        }
+    });
+    
+});
 // getting articles information with no SQL injection
 app.get('/articles/:articleName', function(req, res){
     // database functioning cheking
