@@ -33,6 +33,18 @@ app.get('/test-db', function(req, res){
     });
     
 });
+app.get('/articles/:articleName', function(req, res){
+    // database functioning cheking
+    pool.query("SELECT * FROM article WHERE title=$1",[req.params.articleName], function(err, result){
+        if(err){
+            res.status(500).send(err.toString());
+        }
+        else{
+            res.send(JSON.stringify(result.rows));
+        }
+    });
+    
+});
 
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
