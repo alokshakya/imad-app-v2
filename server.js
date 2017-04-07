@@ -33,6 +33,7 @@ app.get('/test-db', function(req, res){
     });
     
 });
+// getting articles information with no SQL injection
 app.get('/articles/:articleName', function(req, res){
     // database functioning cheking
     pool.query("SELECT * FROM article WHERE title=$1",[req.params.articleName], function(err, result){
