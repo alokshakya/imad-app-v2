@@ -22,8 +22,8 @@ submit.onclick = function() {
         }
         
     };
-    var username = document.getElementById('username');
-    var password = document.getElementById('password');
+    var username = document.getElementById('username').value;
+    var password = document.getElementById('password').value;
     //for devugging purpose print username and password in console
     console.log(username);
     console.log(password);
