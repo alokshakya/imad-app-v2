@@ -36,7 +36,7 @@ app.get('/test-db', function(req, res){
 });
 function hash(input, salt){
     //512 is the key length of hashed value.
-    var hashed= crypto.pbkdf2(input, salt, 100000, 512, 'sha512');
+    var hashed= crypto.pbkdf2Sync(input, salt, 100000, 512, 'sha512');
     return hashed.toString('hex');
 }
 app.get('/hash/:input', function(req,res){
