@@ -25,8 +25,8 @@ submit.onclick = function() {
     var username = document.getElementById('username');
     var password = document.getElementById('password');
     //for devugging purpose print username and password in console
-    console.log('username');
-    console.log('password');
+    console.log(username);
+    console.log(password);
     request.open('POST', 'http://alokshakya.imad.hasura-app.io/login', true);
     request.setRequestHeader('Content-Type','application/json');
     request.send(JSON.stringify({username: username, password: password}));
