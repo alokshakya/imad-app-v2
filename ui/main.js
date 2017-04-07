@@ -19,6 +19,9 @@ submit.onclick = function() {
             else if(request.status===500){
                 alert('something went wrong on server');
             }
+            else if(request.status===503){
+                alert('password is wrong!');
+            }
         }
         
     };
