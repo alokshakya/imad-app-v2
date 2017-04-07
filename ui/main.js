@@ -6,7 +6,7 @@ submit.onclick = function() {
     var request= new XMLHttpRequest();
     // Capture the response from the server and store it in a variable
     request.onreadystatechange=function(){
-        if(requst.readyState===XMLHttpRequest.DONE){
+        if(request.readyState===XMLHttpRequest.DONE){
             //Take some action when XMLHttpRequst is completed
             if(requst.status===200){
                 //TODO
