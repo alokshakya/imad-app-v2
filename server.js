@@ -24,7 +24,13 @@ app.use(session({
 }));
 
 app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'index.html'));
+  res.sendFile(path.join(__dirname, 'blog', 'index.html'));
+});
+app.get('/js/app.js', function (req, res) {
+  res.sendFile(path.join(__dirname, 'blog/js', 'app.js'));
+});
+app.get('/js/controllers/MainController.js', function (req, res) {
+  res.sendFile(path.join(__dirname, 'blog/js/controllers', 'MainController.js'));
 });
 // create the pool somewhere globally so its lifetime
 // lasts for as long as your app is running
