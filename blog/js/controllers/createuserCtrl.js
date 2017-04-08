@@ -1,38 +1,21 @@
 app.controller("createUserCtrl", function ($scope, $http) {
      $scope.user={"name":"enter name","email":"enter mail","password":"password enter"};
     
+      $scope.createUser = function() {
+      $scope.code = null;
+      $scope.response = null;
+      var data1=$scope.user;
+      console.log('username :'+data1.name);
+      console.log('password :'+data1.password);
 
-        $scope.createUser = function () {
-            var data = $scope.user;
-           console.log('username :'+ data.name);
-           console.log('username :'+ data.email);
-           console.log('username :'+ data.password);
-            // Create a request Object
-    var request= new XMLHttpRequest();
-    // Capture the response from the server and store it in a variable
-    request.onreadystatechange=function(){
-        if(request.readyState===XMLHttpRequest.DONE){
-            //Take some action when XMLHttpRequst is completed
-            if(request.status===200){
-                //TODO
-                console.log('user created succusfully');
-                alert("created in successfully");
-            }
-            else if(request.status===403){
-                alert('user/password wrong!');
-            }
-            else if(request.status===500){
-                alert('something went wrong on server');
-            }
-            else if(request.status===503){
-                alert('password is wrong!');
-            }
-        }
-        
+      $http({method: 'POST', url: '/loginuser',data: { name: data1.name, password: data1.password, email:data1.email }, cache: $templateCache}).
+        then(function(response) {
+          $scope.status = response.status;
+          $scope.data = response.data;
+        }, function(response) {
+          $scope.data = response.data || 'Request failed';
+          $scope.status = response.status;
+      });
     };
-    request.open('POST', 'http://alokshakya.imad.hasura-app.io/createuser', true);
-    request.setRequestHeader('Content-Type','application/json');
-    request.send(JSON.stringify({name: data.name, password: data.password, email: data.email}));
-
-        };
+      
 });
