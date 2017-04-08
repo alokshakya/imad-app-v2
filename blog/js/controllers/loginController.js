@@ -8,6 +8,7 @@ app.controller("loginController", function ($scope, $http) {
            console.log('username :'+ data.password);
             // Create a request Object
     var request= new XMLHttpRequest();
+    var response= new XMLHttpResponse();
     // Capture the response from the server and store it in a variable
     request.onreadystatechange=function(){
         if(request.readyState===XMLHttpRequest.DONE){
@@ -15,6 +16,7 @@ app.controller("loginController", function ($scope, $http) {
             if(request.status===200){
                 //TODO
                 console.log('user created succusfully');
+                $scope.res=response.data;
                 alert("logged in successfully");
             }
             else if(request.status===403){
