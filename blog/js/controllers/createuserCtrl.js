@@ -1,12 +1,9 @@
 app.controller("createUserCtrl", function ($scope, $http) {
-   $scope.createUser = function() {
-        $http.post('/createuser',$scope.user).
-        success(function($scope.user) {
-            console.log("posted successfully");
-        })
-        .error(function($scope.user) {
-            console.error("error in posting");
-        });
-    };
+     $scope.user={"name":"enter name","email":"enter mail","password":"password enter"};
+    
 
-    });
+        $scope.createUser = function () {
+           console.log('username :'+$scope.user.username);
+
+        };
+});
