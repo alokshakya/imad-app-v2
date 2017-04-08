@@ -16,7 +16,7 @@ app.controller("createUserCtrl", function ($scope, $http) {
             console.log('data in json :'+data);
             var config = {
                 headers : {
-                    'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
+                    'Content-Type': 'application/json;'
                 }
             }
 
