@@ -10,10 +10,7 @@ app.controller("createUserCtrl", function ($scope, $http) {
             });*/
             var data = $scope.user;
 
-            console.log('user :'+user.name);
-            console.log('user :'+user.email);
-            console.log('user :'+user.password);
-            console.log('data :'+data.name);
+            
             console.log('data :'+data.email);
             console.log('data :'+data.password);
             console.log('data in json :'+data);
