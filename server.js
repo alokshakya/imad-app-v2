@@ -210,6 +210,7 @@ app.post('/loginuser', function(req,res){
     // fetch user name and password from body
     var name=req.body.name;
     var password=req.body.password;
+    var data=null;
     pool.query('SELECT * FROM "users" WHERE name=$1',[name], function(err,result){
         if(err){
             res.status(500).send(err.toString());
@@ -217,7 +218,8 @@ app.post('/loginuser', function(req,res){
         else{
             if(result.rows===0)
             {
-                res.status(403).send("username does not exists");
+                data={message: 'username does not exist'};
+                res.status(403).send(data);
             }
             else{
                 //Match the password
@@ -231,11 +233,12 @@ app.post('/loginuser', function(req,res){
                     // internally on the server side it maps the session id to an object
                     // this object contains value called auth and auth contains userId {auth:{usserId}}
                     // so this information is maintained on server side
-                    var data={message:'user logged successfully'};
+                    data={message:'user logged successfully'};
                     res.send(data);
                 }
                 else{
-                    res.status(503).send("password does not matches");
+                    data={message:'password does not match'};
+                    res.status(503).send(data);
                 }
                 
             }
