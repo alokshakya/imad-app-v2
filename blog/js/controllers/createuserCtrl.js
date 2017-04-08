@@ -16,9 +16,9 @@ app.controller("createUserCtrl", function ($scope, $http) {
             console.log('data in json :'+data);
             var config = {
                 headers : {
-                    'Content-Type': 'application/json;'
+                    'Content-Type': 'application/json'
                 }
-            }
+            };
 
             $http.post('/createUser', data, config)
             .success(function (data, status, headers, config) {
