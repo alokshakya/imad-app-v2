@@ -187,7 +187,7 @@ app.post('/createUser', function(req,res){
     var name=req.body.name;
     var password=req.body.password;
     var email = req.body.email;
-    console.log(username);
+    console.log(name);
     console.log(password);
     console.log(email);
     var salt=crypto.randomBytes(128).toString('hex');
