@@ -8,7 +8,7 @@ app.controller("createUserCtrl", function ($scope, $http, $templateCache) {
       console.log('username :'+data1.name);
       console.log('password :'+data1.password);
 
-      $http({method: 'POST', url: '/loginuser',data: { name: data1.name, password: data1.password, email:data1.email }, cache: $templateCache}).
+      $http({method: 'POST', url: '/createUser',data: { name: data1.name, password: data1.password, email: data1.email }, cache: $templateCache}).
         then(function(response) {
           $scope.status = response.status;
           $scope.data = response.data;
