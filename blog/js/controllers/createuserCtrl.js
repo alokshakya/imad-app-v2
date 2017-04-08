@@ -4,7 +4,7 @@ app.controller("createUserCtrl", function ($scope, $http) {
 
         $scope.createUser = function () {
             var data = $scope.user;
-           console.log('username :'+ data.username);
+           console.log('username :'+ data.name);
 
         };
 });
