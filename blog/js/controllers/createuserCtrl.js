@@ -8,7 +8,9 @@ app.controller("createUserCtrl", function ($scope, $http) {
             });*/
             var data = user;
 
-        
+            console.log('user.name');
+            console.log('user.email');
+            console.log('user.password');
             var config = {
                 headers : {
                     'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
