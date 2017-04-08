@@ -15,7 +15,7 @@ app.controller("loginController", function ($scope, $http) {
             if(request.status===200){
                 //TODO
                 console.log('user created succusfully');
-                alert("created in successfully");
+                alert("logged in successfully");
             }
             else if(request.status===403){
                 alert('user/password wrong!');
