@@ -184,7 +184,7 @@ app.get('/post', function(req, res){
 // starting apis for blog app
 app.post('/createUser', function(req,res){
     // fetch user name and password from body
-    var username=req.body.username;
+    var name=req.body.name;
     var password=req.body.password;
     var email = req.body.email;
     console.log(username);
@@ -192,7 +192,7 @@ app.post('/createUser', function(req,res){
     console.log(email);
     var salt=crypto.randomBytes(128).toString('hex');
     var dbString=hash(password,salt); // creating hash value from password
-    pool.query('INSERT INTO "users" (id,name, password,email) VALUES ($1,$2,$3,$4)',[1,username, dbString, email], function(err,result){
+    pool.query('INSERT INTO "users" (name, password,email) VALUES ($1,$2,$3,$4)',[name, dbString, email], function(err,result){
         if(err){
             res.status(500).send(err.toString());
         }
