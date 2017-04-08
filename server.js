@@ -178,6 +178,24 @@ app.get('/post', function(req, res){
    // res.send('post will be served here');
     res.sendFile(path.join(__dirname, 'ui', 'post.html'));
 });
+// starting apis for blog app
+app.post('/createUserr', function(req,res){
+    // fetch user name and password from body
+    var username=req.body.username;
+    var password=req.body.password;
+    var email = req.body.email;
+    var salt=crypto.randomBytes(128).toString('hex');
+    var dbString=hash(password,salt); // creating hash value from password
+    pool.query('INSERT INTO "user" (username, password,email) VALUES ($1,$2,$3)',[username, dbString,email], function(err,result){
+        if(err){
+            res.status(500).send(err.toString());
+        }
+        else{
+            res.send("user succesfully created :"+username);
+        }
+    });
+    
+});
 
 var port = 8080; // Use 8080 for local development because you might already have apache running on 80
 app.listen(8080, function () {
