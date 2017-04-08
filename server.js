@@ -121,7 +121,7 @@ app.post('/login', function(req,res){
                     // internally on the server side it maps the session id to an object
                     // this object contains value called auth and auth contains userId {auth:{usserId}}
                     // so this information is maintained on server side
-                    res.status(200).send("user succesfully logged :"+username);
+                    res.send("user succesfully logged :"+username);
                 }
                 else{
                     res.status(503).send("password does not matches");
@@ -231,7 +231,7 @@ app.post('/loginuser', function(req,res){
                     // internally on the server side it maps the session id to an object
                     // this object contains value called auth and auth contains userId {auth:{usserId}}
                     // so this information is maintained on server side
-                    res.status(200)send(JSON.stringify("user succesfully logged :"+username));
+                    res.send(JSON.stringify("user succesfully logged :"+username));
                 }
                 else{
                     res.status(503).send("password does not matches");
