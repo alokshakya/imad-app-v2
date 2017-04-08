@@ -1,5 +1,5 @@
 app.controller("createUserCtrl", function ($scope, $http, $templateCache) {
-     $scope.user={"name":"enter name","email":"enter mail","password":"password enter"};
+     $scope.user={"name":"","email":"","password":""};
     
       $scope.createUser = function() {
       $scope.code = null;
