@@ -15,8 +15,8 @@ app.controller("createUserCtrl", function ($scope, $http) {
             //Take some action when XMLHttpRequst is completed
             if(request.status===200){
                 //TODO
-                console.log('user logged succesfully');
-                alert("logged in successfully");
+                console.log('user created succusfully');
+                alert("created in successfully");
             }
             else if(request.status===403){
                 alert('user/password wrong!');
