@@ -32,6 +32,9 @@ app.get('/js/app.js', function (req, res) {
 app.get('/js/controllers/MainController.js', function (req, res) {
   res.sendFile(path.join(__dirname, 'blog/js/controllers', 'MainController.js'));
 });
+app.get('/js/controllers/createUserCtrl.js', function (req, res) {
+  res.sendFile(path.join(__dirname, 'blog/js/controllers', 'createuserCtrl.js'));
+});
 app.get('/css/articleDisplay.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'blog/css', 'articleDisplay.css'));
 });
