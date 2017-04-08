@@ -1,56 +1,71 @@
+<!doctype html>
 <html>
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ABC BANK</title>
-  <link rel="stylesheet" href="css/bootstrap.min.css"/>
-  <link rel="stylesheet" href="css/style.css"/>
-  <script src="js/jquery.js"></script>
-  <style>
-  *{ outline: 1px solid red !important}
-    
-  </style>
-  
-  
-<meta charset="utf-8"></meta>
-</head>
-<body>
-    <!--Routing-->
-    <div class="row">
-    <div class="col-md-12">
-    <img src="img/Bank2.jpg" class="img img-responsive">
-      
-    </div>
-    </div>
-    <div class="row">
-    <div class="col-md-3" id="side">
-    
-      <!--sidebar starts-->
-      <ul>
-        <li><a href="#createCust">Create Customer</a></li>
-        <li><a href="#updateCust">Update Customer</a></li>
-        <li><a href="#deleteCust">Delete Customer</a></li>
-        <li><a href="#deleteAcc">Delete Account</a></li>
-        <li><a href="#viewCust">View Customer</a></li>
-        <li><a href="#viewAcc">ViewAccount</a></li>
-      </ul>
-
-      <!--sidebar ends-->
+  <head>
+      <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet" />
+    <link href='http://fonts.googleapis.com/css?family=Roboto:500,300,700,400' rel='stylesheet' type='text/css'>
+    <link href="css/bookDisplay.css" rel="stylesheet" />
+    //jquery
+    <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+  //angular.min.js cdn
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
+      //angular-route.min.js cdn
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular-route.min.js">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+  </head>
+  <body ng-app="myApp">
+    <div class="header">
+      <div class="container">
+        <h1>Book End</h1>
+      </div>
     </div>
 
-<div class="col-md-9 jumbotran"><br /><br />
+     <div class="main" ng-controller="MainController">
+      <div class="container">
 
-  <div ng-app="mainApp">
-      <ng-view></ng-view>
+        <h1>{{ title }}</h1>
+        <h2>{{ promo }}</h2>
+
+     <!--   <div class="col-md-6">
+          <div class="thumbnail">
+            <img src="img/the-book-of-trees.jpg">
+            <p class="title"> {{product.name |uppercase}} </p>
+            <p class="price"> {{product.price | currency}} </p>
+            <p class="date"> {{ product.pubdate |date}} </p>
+          </div>
+        </div>-->
+        
+        <div ng-repeat="product in products" class="col-md-6"> 
+  <div class="thumbnail"> 
+    <img ng-src="{{product.cover}}"> 
+    <p class="title">{{ product.name }}</p> 
+    <p class="price">{{ product.price | currency }}</p> 
+    <p class="date">{{ product.pubdate | date }}</p>
+    <div class="rating">
+      <p class="likes" ng-click="plusOne($index)">+ Likes {{product.likes}} </p>
+      <p class="dislikes" ng-click="minusOne($index)">- Dislikes {{product.dislikes}} </p>
+    </div>
+  </div> 
+</div>
+
+      </div> 
+    </div> 
+
+    <div class="footer">
+      <div class="container">
+        <h2>Available for iPhone and Android.</h2>
+        <img src="http://s3.amazonaws.com/codecademy-content/projects/shutterbugg/app-store.png" width="120px" />
+        <img src="http://s3.amazonaws.com/codecademy-content/projects/shutterbugg/google-play.png" width="110px" />
+      </div>
     </div>
 
-</div>
-</div>
-<div class="col-sm-2">
-</div>
-</div>
 
-    <script type="text/javascript" src="js/angular.min.js"></script>
-    <script type="text/javascript" src="js/angular-route.min.js"></script>
-    <script type="text/javascript" src="js/route.js"></script>
-</body>
+    <!-- Modules -->
+    <script src="js/app.js"></script>
+
+    <!-- Controllers -->
+    <script src="js/controllers/MainController.js"></script>
+  </body>
 </html>
