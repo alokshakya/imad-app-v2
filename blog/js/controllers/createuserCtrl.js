@@ -15,7 +15,7 @@ app.controller("createUserCtrl", function ($scope, $http) {
                 }
             }
 
-            $http.post('/ServerRequest/PostDataResponse', data, config)
+            $http.post('/createUser', data, config)
             .success(function (data, status, headers, config) {
                 $scope.PostDataResponse = data;
             })
