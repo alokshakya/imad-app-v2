@@ -66,9 +66,10 @@
 <div class="conatainer" ng-controller="loginController">
 <legend>Login User</legend>
 <label>Name </label>
-<input type="text" name="Email" ng-model="user.name" placeholder="Enter user name ">
+<input type="text" name="name" ng-model="user.name" placeholder="Enter user name ">
 <label>Password </label>
-<button class="btn btn-success" ng-click="loginUser"></button>
+<input type="Password" name="Email" ng-model="user.password" placeholder="Enter Password ">
+<button class="btn btn-success" ng-click="loginUser">Login</button>
 <p align="center"> post data response : {{postDataResponse}}</p>
 </div>
 
