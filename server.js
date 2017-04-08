@@ -231,7 +231,8 @@ app.post('/loginuser', function(req,res){
                     // internally on the server side it maps the session id to an object
                     // this object contains value called auth and auth contains userId {auth:{usserId}}
                     // so this information is maintained on server side
-                    res.send({message:'user logged successfully'});
+                    var data={message:'user logged successfully'};
+                    res.send(data);
                 }
                 else{
                     res.status(503).send("password does not matches");
