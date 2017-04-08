@@ -200,8 +200,8 @@ app.post('/createUser', function(req,res){
             res.status(500).send(err.toString());
         }
         else{
-            
-            res.send(JSON.stringify('message : user created succesfully and status code :'));
+            var data={message: 'user created successfully'};
+            res.send(data);
         }
     });
     
