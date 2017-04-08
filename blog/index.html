@@ -29,14 +29,19 @@
         <h1>{{ title }}</h1>
         <h2>{{ promo }}</h2>
 
-     <!--   <div class="col-md-6">
-          <div class="thumbnail">
-            <img src="img/the-book-of-trees.jpg">
-            <p class="title"> {{product.name |uppercase}} </p>
-            <p class="price"> {{product.price | currency}} </p>
-            <p class="date"> {{ product.pubdate |date}} </p>
-          </div>
-        </div>-->
+         <div class="conatainer">
+        <legend>Sign Up Here</legend>
+        <label>Name </label>
+        <input type="text" name="name" ng-model="user.name" placeholder="Enter Your Name ">
+        <label>Email </label>
+        <input type="text" name="Email" ng-model="user.email" placeholder="Enter Your Email ">
+        <label>Password </label>
+        <input type="Password" name="Password" ng-model="user.password" placeholder="Enter Your Password ">
+        <label>Re-Enter Password</label>
+        <input type="password" placeholder="Re-Enter Password ">
+        <button class="btn btn-success" ng-click="createUser"></button>
+
+        </div>
         
         <div ng-repeat="product in products" class="col-md-6"> 
   <div class="thumbnail"> 
