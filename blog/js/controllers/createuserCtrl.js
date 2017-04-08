@@ -10,9 +10,9 @@ app.controller("createUserCtrl", function ($scope, $http) {
             });*/
             var data = $scope.user;
 
-            
-            console.log('data :'+data.email);
-            console.log('data :'+data.password);
+            console.log('data name :'+data.name);
+            console.log('data email :'+data.email);
+            console.log('data password :'+data.password);
             console.log('data in json :'+data);
             var config = {
                 headers : {
