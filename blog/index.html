@@ -58,8 +58,7 @@
         <label>Re-Enter Password</label>
         <input type="password" placeholder="Re-Enter Password ">
         <button class="btn btn-success" type="submit" ng-click="createUser()">signUP</button>
-        <p align="center"> post data response : {{data}}</p>
-        <p align="center"> post data response status : {{status}}</p>
+        <p align="center"> {{data}} {{status}}</p>
 
         </div>
         
@@ -71,8 +70,7 @@
 <label>Password </label>
 <input type="Password" name="Email" ng-model="user.password" placeholder="Enter Password ">
 <button class="btn btn-success" type="submit" ng-click="loginUser()">Login</button>
-<p align="center"> post data response : {{data}}</p>
-<p align="center"> post data response status : {{status}}</p>
+<p align="center"> {{data}} {{status}}</p>
 </div>
 
  
