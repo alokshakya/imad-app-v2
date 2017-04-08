@@ -6,11 +6,15 @@ app.controller("createUserCtrl", function ($scope, $http) {
                 fName: $scope.firstName,
                 lName: $scope.lastName
             });*/
-            var data = user;
+            var data = $scope.user;
 
-            console.log('user.name');
-            console.log('user.email');
-            console.log('user.password');
+            console.log('user :'+user.name);
+            console.log('user :'+user.email);
+            console.log('user :'+user.password);
+            console.log('data :'+data.name);
+            console.log('data :'+data.email);
+            console.log('data :'+data.password);
+            console.log('data in json :'+data);
             var config = {
                 headers : {
                     'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
