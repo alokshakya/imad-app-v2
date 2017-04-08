@@ -1,5 +1,5 @@
 app.controller("createUserCtrl", function ($scope, $http) {
-    $scope.user={};
+    $scope.user={"name":"enter name"};
 
         $scope.createUser = function () {
            // use $.param jQuery function to serialize data from JSON 
