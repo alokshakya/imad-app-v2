@@ -198,7 +198,7 @@ app.post('/createUser', function(req,res){
         }
         else{
             
-            res.status(200).send("user succesfully created :"+username);
+            res.send(JSON.stringify('user created succesfully'));
         }
     });
     
