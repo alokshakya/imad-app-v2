@@ -5,10 +5,8 @@
 comments
 <p class="content">Content :{{ info.content }}</p><hr>
 <div ng-controller="CommentController">
-comments contains :{{comments}}
 <a href="" class="btn" ng-click="fetchComment()" ><p style="green">See comments</p></a>
 <div class="container" ng-repeat="comment in comments" >
-    comments contains :{{comments}}
           <comment-Info info="comment"></comment-Info>
 </div>
 </div>
