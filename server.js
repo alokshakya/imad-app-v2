@@ -41,6 +41,9 @@ app.get('/js/controllers/createArticleController.js', function (req, res) {
 app.get('/js/controllers/ArticleController.js', function (req, res) {
   res.sendFile(path.join(__dirname, 'blog/js/controllers', 'ArticleController.js'));
 });
+app.get('/js/controllers/CommentController.js', function (req, res) {
+  res.sendFile(path.join(__dirname, 'blog/js/controllers', 'CommentController.js'));
+});
 app.get('/js/controllers/loginController.js', function (req, res) {
   res.sendFile(path.join(__dirname, 'blog/js/controllers', 'loginController.js'));
 });
