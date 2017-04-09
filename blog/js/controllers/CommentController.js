@@ -31,7 +31,8 @@ app.controller("CommentController", function ($scope, $http, $templateCache) {
         if(response.data){
           
           // now create comment box for user to comment
-          $('$scope.info.id').removeClass('hidden');
+          $('#$scope.info.id').removeClass('hidden');
+          $('<form>').text('Form');
           // now post comment on the server
           $scope.postOnServer = function(){
               var article_id=$scope.info.id;
