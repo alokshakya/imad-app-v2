@@ -28,19 +28,14 @@ app.controller("CommentController", function ($scope, $http, $templateCache) {
           $scope.status = response.status;
           var condition = response.data;
           console.log(response.data);
-          if(response.data){
+        if(response.data){
           alert("inside logged in");
-      }
-      else{
-          alert("not logged in");
-      }
-        }, function(response) {
-          $scope.data = response.data || 'Request failed';
-          $scope.status = response.status;
-      });
-      //console.log("message from server for log :"+ condition);
-      
-
+          // now create comment box for user to comment
+          $('#commentbox').removeClass('hidden');
+          // now post comment on the server
+          $scope.postOnServer = function(){
+              var article_id=$scope.article_id;
+          var comment= $scope.comment;
       $http({method: 'POST', url: '/comments',data: { article_id: article_id }, cache: $templateCache}).
         then(function(response) {
           $scope.status = response.status;
@@ -50,6 +45,20 @@ app.controller("CommentController", function ($scope, $http, $templateCache) {
           $scope.data = response.data || 'Request failed';
           $scope.status = response.status;
       });
+          };
+          
+      }
+      else{
+          alert("Please login first to comment !");
+      }  
+        }, function(response) {
+          $scope.data = response.data || 'Request failed';
+          $scope.status = response.status;
+      });
+      //console.log("message from server for log :"+ condition);
+      
+
+      
     };
       
 });
