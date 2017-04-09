@@ -262,6 +262,7 @@ app.post('/loginuser', function(req,res){
 });
 app.post('/createArticle', function(req,res){
     // fetch user name and password from body
+    var data={};
     if(isLogged(req)){
     var user_id=req.session.auth.userId;
     var title=req.body.title;
@@ -278,13 +279,14 @@ app.post('/createArticle', function(req,res){
             res.status(500).send(err.toString());
         }
         else{
-            var data={message: 'Article created successfully'};
+            data={message: 'Article created successfully'};
             res.send(data);
         }
     });
         
     }
     else{
+        data={message: 'You are not logged in'};
         res.send('you are not logged');
     }
     
