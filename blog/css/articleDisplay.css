@@ -146,8 +146,8 @@ html, body {
 .article{
 	overflow-y: hidden;
 	background: #ECF0F1;
-	opacity: 1;
-	padding: 20px;
+	opacity: 0.5;
+	padding: 10px;
 	border:1px solid blue;
 
 }
