@@ -94,6 +94,15 @@
       <p align="center" class="h2"> {{data.message}} {{status}}</p>
 </div>
 
+<hr>
+<br>
+     <div class="main" ng-controller="ArticleController">
+      <div class="container">
+         <div class="card" ng-repeat="article in articles">
+          <article-info info="article"></article-info>
+        </div>
+      </div>
+    </div>
 
     <div class="footer">
       <div class="container">
@@ -112,5 +121,6 @@
     <script src="js/controllers/createUserCtrl.js"></script>
     <script src="js/controllers/loginController.js"></script>
     <script src="js/controllers/createArticleController.js"></script>
+    <script src="js/controllers/ArticleController.js"></script>
   </body>
 </html>
