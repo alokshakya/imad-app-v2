@@ -26,18 +26,18 @@ app.controller("CommentController", function ($scope, $http, $templateCache) {
       $http({method: 'GET', url: '/checklogin', cache: $templateCache}).
         then(function(response) {
           $scope.status = response.status;
-          $scope.log = response.data;
+          var condition = response.data;
           console.log(response.data);
         }, function(response) {
           $scope.data = response.data || 'Request failed';
           $scope.status = response.status;
       });
-      console.log("message from server for log :"+ $scope.log);
-      if($scope.log){
-          
+      console.log("message from server for log :"+ condition);
+      if(condition){
+          alert("inside logged in");
       }
       else{
-          
+          alert("not logged in");
       }
 
       $http({method: 'POST', url: '/comments',data: { article_id: article_id }, cache: $templateCache}).
