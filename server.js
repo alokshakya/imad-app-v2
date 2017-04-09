@@ -161,10 +161,22 @@ app.post('/login', function(req,res){
 // checking login
 app.get('/check-login', function(req,res){
     if(req.session && req.session.auth && req.session.auth.userId){
+        
         res.send('You are logged in and your user id is : '+req.session.auth.userId.toString());//userId is int so convert  it to string
     }
     else{
         res.send('You are not logged in ');
+    }
+});
+app.get('/checklogin', function(req,res){
+    var data={};
+    if(req.session && req.session.auth && req.session.auth.userId){
+        data={message:true};
+        res.send(data);//userId is int so convert  it to string
+    }
+    else{
+        data={message: false};
+        res.send(data);
     }
 });
 // implement logout function
