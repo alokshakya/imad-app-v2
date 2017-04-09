@@ -148,5 +148,6 @@ html, body {
 	background: #ECF0F1;
 	opacity: 1;
 	padding: 20px;
+	border:2px solid red;
 
 }
