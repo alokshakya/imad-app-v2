@@ -15,4 +15,8 @@
         <button  class="btn btn-primary btn-small" type="submit" ng-click="createCommentOnServer()">Comment</button>
       </form>
 </div>
+<div class="container" ng-repeat="article in articles" ng-controller="CommentController">
+          <comment-Info info="comment"></comment-Info>
+</div>
+
 
