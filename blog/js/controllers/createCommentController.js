@@ -17,11 +17,7 @@ app.controller("createCommentController", function ($scope, $http, $templateCach
           $scope.data = response.data || 'Request failed';
           $scope.status = response.status;
       });
-      if(reaponse.status===200){
-          $scope.info1=response.data[response.data.length-1];
-          $('#'+$scope.info.id).removeClass('hidden');
-          
-      }
+      
     };
       
 });
