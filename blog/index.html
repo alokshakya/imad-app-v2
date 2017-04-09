@@ -98,6 +98,8 @@
 <br>
      <div class="main" ng-controller="ArticleController">
       <div class="container">
+          <p>article contents:</p><br>
+          <p>{{ articles }}</p>
          <div class="card" ng-repeat="article in articles">
           <article-info info="article"></article-info>
         </div>
