@@ -172,11 +172,11 @@ app.get('/checklogin', function(req,res){
     var data={};
     if(req.session && req.session.auth && req.session.auth.userId){
         data={message:true};
-        res.send(data);//userId is int so convert  it to string
+        res.send(true);//userId is int so convert  it to string
     }
     else{
         data={message: false};
-        res.send(data);
+        res.send(false);
     }
 });
 // implement logout function
