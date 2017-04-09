@@ -329,7 +329,7 @@ app.post('/createComment', function(req,res){
     console.log(article_id);
     console.log(comment);
     
-    pool.query('INSERT INTO comments (user_id, article_id, comment, likes) VALUES ($1,$2,$3, $4)',[user_id, article_id, comment, likes], function(err,result){
+    pool.query('INSERT INTO "comments" (user_id, article_id, comment, likes) VALUES ($1,$2,$3, $4)',[user_id, article_id, comment, likes], function(err,result){
         if(err){
             var data={message: 'error on database side'};
             res.status(500).send(err.toString());
