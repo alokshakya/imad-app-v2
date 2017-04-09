@@ -343,9 +343,15 @@ app.post('/createComment', function(req,res){
             res.status(500).send(err.toString());
         }
         else{
-            var data={};
-            data={message: 'Article created successfully'};
-            res.send(data);
+            pool.query("SELECT * FROM comments WHERE article_id=$1 AND user_id=$2",[article_id,user_id], function(err, result){
+        if(err){
+            res.status(500).send(err.toString());
+        }
+        else{
+            res.send(JSON.stringify(result.rows));
+        }
+    });
+            
         }
     });
         
