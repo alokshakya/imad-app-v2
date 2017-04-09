@@ -305,6 +305,38 @@ app.post('/createArticle', function(req,res){
     }
     
 });
+app.post('/createComment', function(req,res){
+    // fetch user name and password from body
+    
+    if(isLogged(req)){
+    var user_id=req.session.auth.userId;
+    var article_id=req.body.article_id;
+    var comment = req.body.comment;
+    var likes = 0;
+    console.log(user_id);
+    console.log(article_id);
+    console.log(comment);
+    
+    pool.query('INSERT INTO comments (user_id, article_id, comment, likes) VALUES ($1,$2,$3, $4)',[user_id, article_id, comment, likes], function(err,result){
+        if(err){
+            var data={message: 'error on database side'};
+            res.status(500).send(err.toString());
+        }
+        else{
+            var data={};
+            data={message: 'Article created successfully'};
+            res.send(data);
+        }
+    });
+        
+    }
+    else{
+        var data={};
+        data={message: 'You are not logged in'};
+        res.send(data);
+    }
+    
+});
 app.get('/articles', function(req, res){
     // database functioning cheking
     pool.query("SELECT * FROM articles", function(err, result){
