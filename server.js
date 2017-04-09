@@ -301,7 +301,7 @@ app.post('/createArticle', function(req,res){
 });
 app.get('/articles', function(req, res){
     // database functioning cheking
-    pool.query("SELECT * FROM articles LIMIT 50 TEXT-LENGTH", function(err, result){
+    pool.query("SELECT * FROM articles LIMIT 50 ", function(err, result){
         if(err){
             res.status(500).send(err.toString());
         }
