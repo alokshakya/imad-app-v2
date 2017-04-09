@@ -28,17 +28,18 @@ app.controller("CommentController", function ($scope, $http, $templateCache) {
           $scope.status = response.status;
           var condition = response.data;
           console.log(response.data);
-        }, function(response) {
-          $scope.data = response.data || 'Request failed';
-          $scope.status = response.status;
-      });
-      //console.log("message from server for log :"+ condition);
-      if(condition){
+          if(response.data){
           alert("inside logged in");
       }
       else{
           alert("not logged in");
       }
+        }, function(response) {
+          $scope.data = response.data || 'Request failed';
+          $scope.status = response.status;
+      });
+      //console.log("message from server for log :"+ condition);
+      
 
       $http({method: 'POST', url: '/comments',data: { article_id: article_id }, cache: $templateCache}).
         then(function(response) {
