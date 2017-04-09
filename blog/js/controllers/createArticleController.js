@@ -6,7 +6,6 @@ app.controller("createArticleController", function ($scope, $http, $templateCach
       $scope.response = null;
       
       //var data1=$scope.article;
-      console.log('title :'+data1.title);
      // console.log('category :'+data1.category);
       //console.log('content :'+ data1.content);
       console.log('comment :'+$scope.comment);
