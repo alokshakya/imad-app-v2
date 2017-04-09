@@ -27,6 +27,7 @@ app.controller("CommentController", function ($scope, $http, $templateCache) {
         then(function(response) {
           $scope.status = response.status;
           $scope.log = response.data;
+          console.log(response.data);
         }, function(response) {
           $scope.data = response.data || 'Request failed';
           $scope.status = response.status;
