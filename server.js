@@ -262,7 +262,7 @@ app.post('/loginuser', function(req,res){
 });
 app.post('/createArticle', function(req,res){
     // fetch user name and password from body
-    var data={};
+    
     if(isLogged(req)){
     var user_id=req.session.auth.userId;
     var title=req.body.title;
@@ -279,6 +279,7 @@ app.post('/createArticle', function(req,res){
             res.status(500).send(err.toString());
         }
         else{
+            var data={};
             data={message: 'Article created successfully'};
             res.send(data);
         }
@@ -286,8 +287,9 @@ app.post('/createArticle', function(req,res){
         
     }
     else{
+        var data={};
         data={message: 'You are not logged in'};
-        res.send('you are not logged');
+        res.send(data);
     }
     
 });
