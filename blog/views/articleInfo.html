@@ -7,7 +7,7 @@
 <div ng-controller="CommentController">
 <a href="" class="btn" ng-click="fetchComment()" ><p style="green">See comments</p></a>
 <div class="container" ng-repeat="comment in comments" >
-          <comment-Info info="comment"></comment-Info>
+          <comment-Info info="comment"></comment-Info><hr>
 </div>
 </div>
 <a href="" ng-controller="CommentController" class="btn" ng-click="createComment()" ><p style="green">Add comment</p></a><hr>
