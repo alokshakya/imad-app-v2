@@ -17,6 +17,9 @@ app.controller("createCommentController", function ($scope, $http, $templateCach
           $scope.data = response.data || 'Request failed';
           $scope.status = response.status;
       });
+      if(reaponse.status===200){
+          templatateUrl:'/blog/views.commentInfo.html';
+      }
     };
       
 });
