@@ -272,10 +272,10 @@ app.post('/createArticle', function(req,res){
     console.log(user_id);
     console.log(title);
     console.log(category);
-    var salt=crypto.randomBytes(128).toString('hex');
-    var dbString=hash(password,salt); // creating hash value from password
+    
     pool.query('INSERT INTO articles (user_id, title, category, content, likes) VALUES ($1,$2,$3, $4,$5)',[user_id, title, category, content, likes], function(err,result){
         if(err){
+            var data={message: 'error on database side'};
             res.status(500).send(err.toString());
         }
         else{
