@@ -4,7 +4,7 @@ app.controller("createArticleController", function ($scope, $http, $templateCach
       $scope.createArticle = function() {
       $scope.code = null;
       $scope.response = null;
-      var data1=$scope.user;
+      var data1=$scope.article;
       console.log('username :'+data1.name);
       console.log('password :'+data1.password);
 
