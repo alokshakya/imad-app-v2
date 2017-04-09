@@ -143,3 +143,14 @@ html, body {
     margin:20px;
     transition: background 500ms;
 }
+.article{
+z-index: 1;
+	position: fixed;
+	width: 0;
+	height: 90%;
+	overflow-y: hidden;
+	background: #2C3E50;
+	opacity: 1;
+	padding: 20px;
+
+}
