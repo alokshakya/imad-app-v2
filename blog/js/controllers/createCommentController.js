@@ -1,6 +1,6 @@
 app.controller("createCommentController", function ($scope, $http, $templateCache) {
      $scope.article={"title":"","category":"","content":""};
-     console.log('comment outside function :'+$scope.comment);
+     console.log('comment outside function :'+$scope.article.content);
      
       $scope.createCommentOnServer = function() {
       $scope.code = null;
