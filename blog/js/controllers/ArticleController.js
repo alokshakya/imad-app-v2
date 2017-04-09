@@ -1,6 +1,6 @@
 app.controller('ArticleController',  function($scope, $http, $templateCache) {
  	
- 	$http({method: 'POST', url: '/articles', cache: $templateCache}).
+ 	$http({method: 'GET', url: '/articles', cache: $templateCache}).
         then(function(response) {
           $scope.status = response.status;
           $scope.articles = response.data;
