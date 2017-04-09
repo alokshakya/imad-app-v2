@@ -1,4 +1,4 @@
-app.controller('ArticleController', ['$scope', function($scope, $http, $templateCache) {
+app.controller('ArticleController',  function($scope, $http, $templateCache) {
  	
  	$http({method: 'POST', url: '/articles', cache: $templateCache}).
         then(function(response) {
@@ -8,4 +8,4 @@ app.controller('ArticleController', ['$scope', function($scope, $http, $template
           $scope.data = response.data || 'Request failed';
           $scope.status = response.status;
       });
-}]);
+});
