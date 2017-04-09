@@ -53,8 +53,14 @@ app.get('/js/controllers/loginController.js', function (req, res) {
 app.get('/js/directives/articleInfo.js', function (req, res) {
   res.sendFile(path.join(__dirname, 'blog/js/directives', 'articleInfo.js'));
 });
+app.get('/js/directives/commentInfo.js', function (req, res) {
+  res.sendFile(path.join(__dirname, 'blog/js/directives', 'commentInfo.js'));
+});
 app.get('/blog/views/articleInfo.html', function (req, res) {
   res.sendFile(path.join(__dirname, 'blog/views', 'articleInfo.html'));
+});
+app.get('/blog/views/commentInfo.html', function (req, res) {
+  res.sendFile(path.join(__dirname, 'blog/views', 'commentInfo.html'));
 });
 app.get('/css/articleDisplay.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'blog/css', 'articleDisplay.css'));
