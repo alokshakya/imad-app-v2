@@ -27,7 +27,7 @@ app.controller("CommentController", function ($scope, $http, $templateCache) {
         then(function(response) {
           $scope.status = response.status;
           $scope.comments = response.data;
-          fetchComment();
+          $scope.fetchComment();
         }, function(response) {
           $scope.data = response.data || 'Request failed';
           $scope.status = response.status;
