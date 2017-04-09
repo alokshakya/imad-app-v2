@@ -18,7 +18,9 @@ app.controller("createCommentController", function ($scope, $http, $templateCach
           $scope.status = response.status;
       });
       if(reaponse.status===200){
-          templatateUrl:'/blog/views.commentInfo.html';
+          $scope.info1=response.data[response.data.length-1];
+          $('#'+$scope.info.id).removeClass('hidden');
+          
       }
     };
       
