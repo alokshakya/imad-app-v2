@@ -4,11 +4,13 @@
 
 comments
 <p class="content">Content :{{ info.content }}</p><hr>
+<div ng-controller="CommentController">
 comments contains :{{comments}}
-<a href="" ng-controller="CommentController" class="btn" ng-click="fetchComment()" ><p style="green">See comments</p></a>
-<div class="container" ng-repeat="comment in comments" ng-controller="CommentController">
+<a href="" class="btn" ng-click="fetchComment()" ><p style="green">See comments</p></a>
+<div class="container" ng-repeat="comment in comments" >
     comments contains :{{comments}}
           <comment-Info info="comment"></comment-Info>
+</div>
 </div>
 <a href="" ng-controller="CommentController" class="btn" ng-click="createComment()" ><p style="green">Add comment</p></a><hr>
 <div id="{{info.id}}" class="hidden" >
