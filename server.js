@@ -38,6 +38,9 @@ app.get('/js/controllers/createUserCtrl.js', function (req, res) {
 app.get('/js/controllers/createArticleController.js', function (req, res) {
   res.sendFile(path.join(__dirname, 'blog/js/controllers', 'createArticleController.js'));
 });
+app.get('/js/controllers/ArticleController.js', function (req, res) {
+  res.sendFile(path.join(__dirname, 'blog/js/controllers', 'ArticleController.js'));
+});
 app.get('/js/controllers/loginController.js', function (req, res) {
   res.sendFile(path.join(__dirname, 'blog/js/controllers', 'loginController.js'));
 });
@@ -295,7 +298,7 @@ app.post('/createArticle', function(req,res){
 });
 app.get('/articles', function(req, res){
     // database functioning cheking
-    pool.query("SELECT * FROM articles ", function(err, result){
+    pool.query("SELECT * FROM articles LIMIT 50 TEXT-LENGTH", function(err, result){
         if(err){
             res.status(500).send(err.toString());
         }
