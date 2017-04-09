@@ -145,8 +145,8 @@ html, body {
 }
 .article{
 	overflow-y: hidden;
-	background: #2C3E50;
-	opacity: 0.9;
+	background: #ECF0F1;
+	opacity: 1;
 	padding: 20px;
 
 }
