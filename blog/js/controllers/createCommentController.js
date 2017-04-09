@@ -1,11 +1,11 @@
 app.controller("createCommentController", function ($scope, $http, $templateCache) {
-     $scope.article={"title":"","category":"","content":""};
+     $scope.article.$scope.info.id={"title":"","category":"","content":""};
      console.log('comment outside function :'+$scope.article.content);
      
       $scope.createCommentOnServer = function() {
       $scope.code = null;
       $scope.response = null;
-      var data1=$scope.article;
+      var data1=$scope.article.$scope.info.id;
       console.log('article id :'+$scope.info.id);
       console.log('content :'+ data1.content);
 
