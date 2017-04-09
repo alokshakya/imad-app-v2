@@ -74,7 +74,7 @@
 <br>
      <div class="" ng-controller="ArticleController">
       <div class="container">
-          <label>Search: <input ng-model="searchText"></label>
+          <label class="title">Search: <input ng-model="searchText"></label>
          <div class="container" ng-repeat="article in articles | filter:searchText">
           <article-Info info="article"></article-Info><hr>
           
