@@ -36,6 +36,8 @@ app.controller("CommentController", function ($scope, $http, $templateCache) {
           $scope.postOnServer = function(){
               var article_id=$scope.info.id;
           var comment= $scope.comment;
+          console.log('article id is: '+article_id);
+          console.log("comment is :"+comment);
       $http({method: 'POST', url: '/comments',data: { article_id: article_id }, cache: $templateCache}).
         then(function(response) {
           $scope.status = response.status;
