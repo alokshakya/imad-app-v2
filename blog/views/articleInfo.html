@@ -6,7 +6,7 @@
 <p class="content">Content :{{ info.content }}</p><hr>
 <a href="" ng-controller="CommentController" class="btn" ng-click="fetchComment()" ><p style="green">See comments</p></a>
 <a href="" ng-controller="CommentController" class="btn" ng-click="createComment()" ><p style="green">Add comment</p></a><hr>
-<div id={{info.id}} class="hidden">
+<div id="{{info.id}}" class="hidden">
     <form>
         <div class="form-group">
           <textarea class="form-control status-box" rows="2" ng-model="article.comment" placeholder="What's on your mind?"></textarea>
