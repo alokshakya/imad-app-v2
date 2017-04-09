@@ -4,6 +4,6 @@ app.directive('articleInfo', function() {
     scope: { 
       info: '=' 
     }, 
-    templateUrl: 'views/articleInfo.html' 
+    templateUrl: 'blog/views/articleInfo.html' 
   }; 
 });
