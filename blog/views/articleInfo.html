@@ -1,7 +1,7 @@
- <hr><h2  ng-controller="CommentController" class="title">Title :{{ info.title }}</h2> 
+ <hr><h2 class="title">Title :{{ info.title }}</h2> 
 <p class="category"> Catagory :{{ info.category }}</p> 
 <p class="date">Date :{{ info.timestamp | date }}</p>
 
-<button class="btn" ng-click="fetchComment()" >fetch comments</button>
+<button ng-controller="CommentController" class="btn" ng-click="fetchComment()" >fetch comments</button>
 <p class="content">Content :{{ info.content }}</p><hr>
 
