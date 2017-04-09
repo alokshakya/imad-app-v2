@@ -1,6 +1,6 @@
  <div class="article">
  <hr><h2 class="title">Title :{{ info.title | filter:searchTitle }}</h2> 
-<p class="category"> Catagory :{{ info.category |filter:searchCategory}}</p>
+<p class="category"> Catagory :{{ info.category }}</p>
 <p class="author"> Author :{{ info.user_name |filter:searchAuthor}}</p>
 <p class="date">Date :{{ info.timestamp | date }} "{{ info.id }}"</p>
 <p class="content">{{ info.content }}</p><hr>
