@@ -18,10 +18,26 @@ app.controller("CommentController", function ($scope, $http, $templateCache) {
       });
     };
     $scope.createComment = function() {
+        
       $scope.code = null;
       $scope.response = null;
       var article_id=$scope.info.id;
       console.log('article_id is :'+article_id);
+      $http({method: 'GET', url: '/checklogin', cache: $templateCache}).
+        then(function(response) {
+          $scope.status = response.status;
+          $scope.log = response.data;
+        }, function(response) {
+          $scope.data = response.data || 'Request failed';
+          $scope.status = response.status;
+      });
+      console.log("message from server for log :"+ $scope.log.message);
+      if($scope.log.message=="true"){
+          
+      }
+      else{
+          
+      }
 
       $http({method: 'POST', url: '/comments',data: { article_id: article_id }, cache: $templateCache}).
         then(function(response) {
