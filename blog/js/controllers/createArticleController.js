@@ -1,6 +1,6 @@
 app.controller("createArticleController", function ($scope, $http, $templateCache) {
     
-    $scope.comment=null;
+    $scope.comment="";
       $scope.createArticle = function() {
       $scope.code = null;
       $scope.response = null;
