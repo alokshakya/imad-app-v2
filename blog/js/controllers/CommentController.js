@@ -1,5 +1,5 @@
 app.controller("CommentController", function ($scope, $http, $templateCache) {
-     $scope.article_id="";
+     $scope.comments=[];
 
     
       $scope.fetchComment = function() {
@@ -11,7 +11,7 @@ app.controller("CommentController", function ($scope, $http, $templateCache) {
       $http({method: 'POST', url: '/comments',data: { article_id: article_id }, cache: $templateCache}).
         then(function(response) {
           $scope.status = response.status;
-          $scope.data = response.data;
+          $scope.comments = response.data;
         }, function(response) {
           $scope.data = response.data || 'Request failed';
           $scope.status = response.status;
