@@ -3,7 +3,7 @@
 <p class="category"> Catagory :{{ info.category |filter:searchCategory}}</p>
 <p class="author"> Author :{{ info.user_name |filter:searchAuthor}}</p>
 <p class="date">Date :{{ info.timestamp | date }} "{{ info.id }}"</p>
-<p class="content">{{ info.content | filter:searchContent}}</p><hr>
+<p class="content">{{ info.content }}</p><hr>
 <div ng-controller="CommentController">
 <a href="" class="btn" ng-click="fetchComment()" ><p style="green">See comments</p></a>
 <div class="container" ng-repeat="comment in comments" >
