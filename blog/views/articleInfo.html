@@ -10,7 +10,7 @@
 <div id="{{info.id}}" class="hidden" >
     <form>
         <div class="form-group">
-          <textarea class="form-control status-box" rows="2" ng-model="article{{info.id}}.content" placeholder="What's on your mind?"></textarea>
+          <textarea class="form-control status-box" rows="2" ng-model="article.{{info.id}}.content" placeholder="What's on your mind?"></textarea>
         </div>
         <button ng-controller="createCommentController" class="btn btn-primary btn-small" type="submit" ng-click="createCommentOnServer()">Comment</button>
       </form>
