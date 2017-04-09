@@ -62,6 +62,16 @@ function hash(input, salt){
     //return hashed.toString('hex'); returns only string
     return["pbkdf2","10000",salt,hashed.toString('hex')].join('$');
 }
+function isLogged(req){
+    if(req.session && req.session.auth && req.session.auth.userId){
+        return true;
+        //res.send('You are logged in and your user id is : '+req.session.auth.userId.toString());//userId is int so convert  it to string
+    }
+    else{
+        return false;
+       // res.send('You are not logged in ');
+    }
+}
 app.get('/hash/:input', function(req,res){
     var salt ='this-is-random-salt';
     var hashedString = hash(req.params.input,salt);
@@ -245,6 +255,35 @@ app.post('/loginuser', function(req,res){
             
         }
     });
+    
+});
+app.post('/createArticle', function(req,res){
+    // fetch user name and password from body
+    if(isLogged(req)){
+    var user_id=req.session.auth.userId;
+    var title=req.body.title;
+    var category = req.body.category;
+    var content = req.body.content;
+    var likes = 0;
+    console.log(name);
+    console.log(password);
+    console.log(email);
+    var salt=crypto.randomBytes(128).toString('hex');
+    var dbString=hash(password,salt); // creating hash value from password
+    pool.query('INSERT INTO articles (user_id, title, category, content, likes) VALUES ($1,$2,$3, $4,$5)',[user_id, title, category, content, likes], function(err,result){
+        if(err){
+            res.status(500).send(err.toString());
+        }
+        else{
+            var data={message: 'Article created successfully'};
+            res.send(data);
+        }
+    });
+        
+    }
+    else{
+        res.send('you are not logged');
+    }
     
 });
 
