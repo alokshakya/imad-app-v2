@@ -6,9 +6,9 @@ app.controller("createCommentController", function ($scope, $http, $templateCach
       $scope.response = null;
       var data1=$scope.comment;
       console.log('article id :'+$scope.info.id);
-      console.log('comment is :'+data1.comment);
+      console.log('comment is :'+data1.comment.comment);
 
-      $http({method: 'POST', url: '/createComment',data: { article_id: $scope.info.id, comment: data1.comment }, cache: $templateCache}).
+      $http({method: 'POST', url: '/createComment',data: { article_id: $scope.info.id, comment: data1.comment.comment }, cache: $templateCache}).
         then(function(response) {
           $scope.status = response.status;
           $scope.data = response.data;
