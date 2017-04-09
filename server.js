@@ -169,13 +169,10 @@ app.get('/check-login', function(req,res){
     }
 });
 app.get('/checklogin', function(req,res){
-    var data={};
     if(req.session && req.session.auth && req.session.auth.userId){
-        data={message:true};
         res.send(true);//userId is int so convert  it to string
     }
     else{
-        data={message: false};
         res.send(false);
     }
 });
