@@ -155,3 +155,14 @@ html, body {
     font-family:sans-serif;
     padding: 2px;
 }
+.author{
+    padding:3px;
+    color:#cfd8bc;
+    font-family: Comic Sans MS;
+    font-style: italic;
+    margin-top:10px;
+    padding-left:20px;
+    padding-right:20px;
+    margin:20px;
+    transition: background 500ms;
+}
