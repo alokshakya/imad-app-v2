@@ -32,7 +32,7 @@ app.controller("CommentController", function ($scope, $http, $templateCache) {
           $scope.data = response.data || 'Request failed';
           $scope.status = response.status;
       });
-      console.log("message from server for log :"+ condition);
+      //console.log("message from server for log :"+ condition);
       if(condition){
           alert("inside logged in");
       }
