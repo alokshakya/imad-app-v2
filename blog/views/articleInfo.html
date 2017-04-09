@@ -10,6 +10,11 @@
           <comment-Info info="comment"></comment-Info><hr>
 </div>
 </div>
+<div id="{{info.id}}" class="hidden" ng-controller="createCommentController">
+<p class="date">Date :{{ info1.timestamp | date }}</p>
+<p class="author">{{info1.user_name}} :</p> <p class="comment">{{ info1.comment }}</p>   
+    
+</div>
 <a href="" ng-controller="CommentController" class="btn" ng-click="createComment()" ><p style="green">Add comment</p></a><hr>
 <div id="{{info.id}}" class="hidden" >
     <form ng-controller="createCommentController">
