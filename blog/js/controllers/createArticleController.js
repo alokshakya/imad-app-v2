@@ -1,5 +1,5 @@
 app.controller("createArticleController", function ($scope, $http, $templateCache) {
-    // $scope.article={"title":"","category":"","content":""};
+    
     $scope.comment=null;
       $scope.createArticle = function() {
       $scope.code = null;
