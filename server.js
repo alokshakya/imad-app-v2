@@ -44,6 +44,9 @@ app.get('/js/controllers/ArticleController.js', function (req, res) {
 app.get('/js/controllers/loginController.js', function (req, res) {
   res.sendFile(path.join(__dirname, 'blog/js/controllers', 'loginController.js'));
 });
+app.get('/js/directives/articleInfo.js', function (req, res) {
+  res.sendFile(path.join(__dirname, 'blog/js/directives', 'articleInfo.js'));
+});
 app.get('/css/articleDisplay.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'blog/css', 'articleDisplay.css'));
 });
