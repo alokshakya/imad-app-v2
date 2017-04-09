@@ -31,7 +31,7 @@ app.controller("CommentController", function ($scope, $http, $templateCache) {
           $scope.data = response.data || 'Request failed';
           $scope.status = response.status;
       });
-      console.log("message from server for log :"+ $scope.log.message);
+      console.log("message from server for log :"+ $scope.log[0].message);
       if($scope.log.message=="true"){
           
       }
