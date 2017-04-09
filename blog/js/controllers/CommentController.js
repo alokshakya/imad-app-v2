@@ -1,5 +1,5 @@
 app.controller("CommentController", function ($scope, $http, $templateCache) {
-     $scope.comments=[{}];
+     $scope.comments=[];
 
     
       $scope.fetchComment = function() {
