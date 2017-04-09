@@ -1,4 +1,4 @@
-app.controller('ArticleController', ['$scope', function($scope) {
+app.controller('ArticleController', ['$scope', function($scope, $http, $templateCache) {
  	$http({method: 'GET', url: '/articles', cache: $templateCache}).
         then(function(response) {
           $scope.status = response.status;
