@@ -14,6 +14,7 @@ app.controller("createArticleController", function ($scope, $http, $templateCach
         then(function(response) {
           $scope.status = response.status;
           $scope.data = response.data;
+          $scope.fetchComment();
         }, function(response) {
           $scope.data = response.data || 'Request failed';
           $scope.status = response.status;
