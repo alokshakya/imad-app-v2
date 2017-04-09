@@ -1,9 +1,9 @@
  <div class="article">
- <hr><h2 class="title">Title :{{ info.title | filter:searchTitle }}</h2> 
-<p class="category"> Catagory :{{ info.category |filter:searchTitle }}</p>
-<p class="author"> Author :{{ info.user_name |filter:searchTitle}}</p>
+ <hr><h2 class="title">Title :{{ info.title  }}</h2> 
+<p class="category"> Catagory :{{ info.category  }}</p>
+<p class="author"> Author :{{ info.user_name }}</p>
 <p class="date">Date :{{ info.timestamp | date }} "{{ info.id }}"</p>
-<p class="content">{{ info.content |filter:searchTitle }}</p><hr>
+<p class="content">{{ info.content  }}</p><hr>
 <div ng-controller="CommentController">
 <a href="" class="btn" ng-click="fetchComment()" ><p style="green">See comments</p></a>
 <div class="container" ng-repeat="comment in comments" >
