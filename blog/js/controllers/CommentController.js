@@ -29,12 +29,12 @@ app.controller("CommentController", function ($scope, $http, $templateCache) {
           var condition = response.data;
           console.log(response.data);
         if(response.data){
-          alert("inside logged in");
+          
           // now create comment box for user to comment
-          $('#commentbox').removeClass('hidden');
+          $($scope.info.id).removeClass('hidden');
           // now post comment on the server
           $scope.postOnServer = function(){
-              var article_id=$scope.article_id;
+              var article_id=$scope.info.id;
           var comment= $scope.comment;
       $http({method: 'POST', url: '/comments',data: { article_id: article_id }, cache: $templateCache}).
         then(function(response) {
