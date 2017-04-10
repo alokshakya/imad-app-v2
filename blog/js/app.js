@@ -1,4 +1,4 @@
-var app=angular.module("myApp", ['infinite-scroll','ngResource']);
+var app=angular.module("myApp", ['infinite-scroll','ngResource','ngRoute']);
 app.controller('DemoController', function($scope, Reddit) {
   $scope.reddit = new Reddit();
 });
