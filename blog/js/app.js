@@ -1,5 +1,5 @@
 var app=angular.module("myApp", ['infinite-scroll']);
-myApp.controller('DemoController', function($scope, Reddit) {
+app.controller('DemoController', function($scope, Reddit) {
   $scope.reddit = new Reddit();
 });
 
