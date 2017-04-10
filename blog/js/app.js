@@ -11,7 +11,7 @@ app.factory('Reddit', function($http) {
     this.after = 12;
   };
 
-  Reddit.prototype.nextPage = function() {
+  Reddit.prototype.nextPage = function($scope,$http,$templateCache) {
     if (this.busy) return;
     this.busy = true;
  //make a post request to get article with data of id article id
