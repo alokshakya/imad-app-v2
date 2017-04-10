@@ -1,8 +1,8 @@
 var app=angular.module("myApp", ['infinite-scroll']);
 app.controller('DemoController', function($scope, $http) {
   $scope.articles=[];
-  $scope.busy= {"busy":"false"};
-  var con= false;
+  $scope.busy= {busy:0};
+
   $scope.after=10;
   console.log('outside nextPage() after is :'+$scope.after);
   console.log('outside nextPage() busy is :'+$scope.busy.busy);
@@ -11,7 +11,7 @@ app.controller('DemoController', function($scope, $http) {
        // console.log('inside nextPage() busy is :'+$scope.busy);
         console.log('inside nextPage() article is :'+$scope.busy.busy);
     if ($scope.busy.busy) return;
-    $scope.busy.busy = true;
+    $scope.busy.busy = 1;
     
  //make a post request to get article with data of id article id
       console.log('Inside nextPage() after is :'+$scope.after);
@@ -24,7 +24,7 @@ app.controller('DemoController', function($scope, $http) {
           $scope.status = response.status;
           $scope.articles.push(response.data);
           $scope.after=1+$scope.after;
-          $scope.busy.busy=false;
+          $scope.busy.busy=0;
         }, function(response) {
           $scope.data = response.data || 'Request failed';
           $scope.status = response.status;
