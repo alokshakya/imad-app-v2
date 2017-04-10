@@ -1,13 +1,13 @@
 var app=angular.module("myApp", ['infinite-scroll']);
 app.controller('DemoController', function($scope, $http) {
   $scope.articles=[];
-  $scope.busy= FALSE;
+  $scope.busy= 0;
   $scope.after=10;
   console.log('outside nextPage() after is :'+$scope.after);
 
     $scope.nextPage = function($scope,$http) {
     if ($scope.busy) return;
-    $scope.busy = TRUE;
+    $scope.busy = 1;
  //make a post request to get article with data of id article id
       console.log('Inside nextPage() after is :'+$scope.after);
       console.log('value of busy is before requset :'+$scope.busy);
@@ -19,7 +19,7 @@ app.controller('DemoController', function($scope, $http) {
           $scope.status = response.status;
           $scope.articles.push(response.data);
           $scope.after=1+$scope.after;
-          $scope.busy=false;
+          $scope.busy=0;
         }, function(response) {
           $scope.data = response.data || 'Request failed';
           $scope.status = response.status;
