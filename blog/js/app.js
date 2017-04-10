@@ -4,7 +4,7 @@ app.controller('DemoController', function($scope, $http) {
   $scope.busy= false;
   $scope.after=1;
 
-  $scope.reddit.nextPage = function($scope,$http) {
+  var nextPage = function($scope,$http) {
     if ($scope.busy) return;
     $scope.busy = true;
  //make a post request to get article with data of id article id
