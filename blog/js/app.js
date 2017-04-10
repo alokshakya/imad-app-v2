@@ -16,7 +16,7 @@ app.factory('Reddit', function($http) {
     this.busy = true;
  //make a post request to get article with data of id article id
       
-      $scope.response = null;
+      
       var article_id=this.after;
       console.log('article_id is :'+article_id);
 
