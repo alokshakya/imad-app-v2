@@ -76,20 +76,23 @@
      <div class="" ng-controller="ArticleController">
       <div class="container">
           <label class="title">Search: <input ng-model="searchTitle"></label>
+          <div class="container" ng-repeat="article in articles | filter:searchTitle">
+          <article-Info info="article"></article-Info><hr>
+      </div>
+    </div>
            
 <div infinite-scroll='nextPage()' infinite-scroll-disabled='{{busy}}' infinite-scroll-distance='1' ng-controller="DemoController">
      <div class="container" ng-repeat="article in articles | filter:searchTitle">
           <article-Info info="article"></article-Info><hr>
           
         </div>
-    <div ng-show='reddit.busy'>Loading data...</div>
+    <div ng-show='{{busy}}'>Loading data...</div>
 </div>
           
 
           
     
-      </div>
-    </div>
+     
 
     <div class="footer">
       <div class="container">
