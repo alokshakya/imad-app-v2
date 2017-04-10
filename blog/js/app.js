@@ -1,5 +1,5 @@
 var app= angular.module('myApp', ['infinite-scroll']);
-app.controller('DemoController',[$Scope,$http, function($scope, $http) {
+app.controller('DemoController',[$scope,$http, function($scope, $http) {
   $scope.articles=[];
   $scope.busy= false;
 
