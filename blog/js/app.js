@@ -31,7 +31,7 @@ app.controller('DemoController', function($scope, $http) {
  //end of poat request with id
    
   };
-  console.log('value of busy is after requset :'+$scope.busy);
+  console.log('value of busy is after requset is completed :'+$scope.busy);
 
 });
 
