@@ -8,7 +8,7 @@ app.factory('Reddit', function($http) {
   var Reddit = function() {
     this.articles = [];
     this.busy = false;
-    this.after = 12;
+    this.after = 1;
   };
 
   Reddit.prototype.nextPage = function($scope,$http,$templateCache) {
