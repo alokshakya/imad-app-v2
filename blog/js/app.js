@@ -13,7 +13,7 @@ app.controller('DemoController', function($scope, $http) {
       var article_id=$scope.after;
       console.log('article_id is :'+article_id);
 
-      $http({method: 'POST', url: '/comments',data: { article_id: article_id }}).
+      $http({method: 'GET', url: '/article/'+article_id+''}).
         then(function(response) {
           $scope.status = response.status;
           $scope.articles.push(response.data);
