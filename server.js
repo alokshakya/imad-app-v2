@@ -29,6 +29,9 @@ app.get('/', function (req, res) {
 app.get('/js/app.js', function (req, res) {
   res.sendFile(path.join(__dirname, 'blog/js', 'app.js'));
 });
+app.get('/js/ng-infinite-scroll.min.js', function (req, res) {
+  res.sendFile(path.join(__dirname, 'blog/js', 'ng-infinite-scroll.min.js'));
+});
 app.get('/js/controllers/MainController.js', function (req, res) {
   res.sendFile(path.join(__dirname, 'blog/js/controllers', 'MainController.js'));
 });
