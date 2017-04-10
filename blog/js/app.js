@@ -1,14 +1,14 @@
 var app= angular.module('myApp', ['infinite-scroll']);
-app.controller('DemoController', function($scope, $http) {
+app.controller('DemoController',[$Scope,$http, function($scope, $http) {
   $scope.articles=[];
-  $scope.busy= {"busy":"0"};
+  $scope.busy= false;
 
   $scope.after=10;
   console.log('outside nextPage() after is :'+$scope.after);
   console.log('outside nextPage() busy is :'+$scope.busy.busy);
 
     $scope.nextPage = function($scope,$http) {
-       // console.log('inside nextPage() busy is :'+$scope.busy);
+       console.log('inside nextPage() busy is :'+$scope.busy);
        
   
     
@@ -33,4 +33,4 @@ app.controller('DemoController', function($scope, $http) {
   };
   console.log('value of busy is after requset is completed :'+$scope.busy.busy);
 
-});
+}]);
