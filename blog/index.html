@@ -77,7 +77,7 @@
       <div class="container">
           <label class="title">Search: <input ng-model="searchTitle"></label>
            
-<div infinite-scroll='nextPage()' infinite-scroll-disabled='reddit.busy' infinite-scroll-distance='1' ng-controller="DemoController">
+<div infinite-scroll='nextPage()' infinite-scroll-disabled='{{busy}}' infinite-scroll-distance='1' ng-controller="DemoController">
      <div class="container" ng-repeat="article in articles | filter:searchTitle">
           <article-Info info="article"></article-Info><hr>
           
