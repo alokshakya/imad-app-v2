@@ -195,9 +195,9 @@ app.get('/logout', function(req,res){
     res.send('logged out');
 });
 // getting articles information with no SQL injection
-app.get('/articles/:articleName', function(req, res){
+app.get('/articles/:article_id', function(req, res){
     // database functioning cheking
-    pool.query("SELECT * FROM article WHERE title=$1",[req.params.articleName], function(err, result){
+    pool.query("SELECT * FROM articles WHERE id=$1",[req.params.article_id], function(err, result){
         if(err){
             res.status(500).send(err.toString());
         }
