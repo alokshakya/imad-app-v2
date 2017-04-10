@@ -5,7 +5,7 @@ app.controller('DemoController', function($scope, $http) {
   $scope.after=10;
   console.log('outside nextPage() after is :'+$scope.after);
 
-  var nextPage = function($scope,$http) {
+    $scope.nextPage = function($scope,$http) {
     if ($scope.busy) return;
     $scope.busy = true;
  //make a post request to get article with data of id article id
