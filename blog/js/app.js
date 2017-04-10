@@ -1,7 +1,7 @@
 var app=angular.module("myApp", ['infinite-scroll']);
 app.controller('DemoController', function($scope, $http) {
   $scope.articles=[];
-  $scope.busy= {busy:0};
+  $scope.busy= {"busy":"0"};
 
   $scope.after=10;
   console.log('outside nextPage() after is :'+$scope.after);
