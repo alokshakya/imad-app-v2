@@ -5,10 +5,10 @@ app.controller('DemoController', function($scope, $http) {
   var con= false;
   $scope.after=10;
   console.log('outside nextPage() after is :'+$scope.after);
-  console.log('outside nextPage() busy is :'+$busy);
+  console.log('outside nextPage() busy is :'+$scope.busy);
 
     $scope.nextPage = function($scope,$http) {
-        console.log('inside nextPage() busy is :'+$busy);
+        console.log('inside nextPage() busy is :'+$scope.busy);
     if ($scope.busy) return;
     $scope.busy = true;
     
