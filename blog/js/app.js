@@ -1,31 +1,24 @@
 var app=angular.module("myApp", ['infinite-scroll']);
 app.controller('DemoController', function($scope, Reddit) {
-  $scope.reddit = new Reddit();
-});
+  $scope.articles=[];
+  $scope.busy= false;
+  $scope.after=1;
 
-// Reddit constructor function to encapsulate HTTP and pagination logic
-app.factory('Reddit', function($http) {
-  var Reddit = function() {
-    this.articles = [];
-    this.busy = false;
-    this.after = 1;
-  };
-
-  Reddit.prototype.nextPage = function($scope,$http,$templateCache) {
-    if (this.busy) return;
-    this.busy = true;
+  $scope.reddit.nextPage = function($scope,$http) {
+    if ($scope.busy) return;
+    $scope.busy = true;
  //make a post request to get article with data of id article id
       
       
-      var article_id=this.after;
+      var article_id=$scope.after;
       console.log('article_id is :'+article_id);
 
-      $http({method: 'POST', url: '/comments',data: { article_id: article_id }, cache: $templateCache}).
+      $http({method: 'POST', url: '/comments',data: { article_id: article_id }}).
         then(function(response) {
           $scope.status = response.status;
-          this.articles.push(response.data);
-          this.after=1+this.articles[this.articles.length-1].id;
-          this.busy=false;
+          $scope.articles.push(response.data);
+          $scope.after=1+$scope.articles[$scope.articles.length-1].id;
+          $scope.busy=false;
         }, function(response) {
           $scope.data = response.data || 'Request failed';
           $scope.status = response.status;
@@ -34,5 +27,6 @@ app.factory('Reddit', function($http) {
    
   };
 
-  return Reddit;
 });
+
+
