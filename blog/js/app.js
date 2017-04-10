@@ -1,13 +1,13 @@
 var app=angular.module("myApp", ['infinite-scroll']);
 app.controller('DemoController', function($scope, $http) {
   $scope.articles=[];
-  $scope.busy= false;
+  $scope.busy= FALSE;
   $scope.after=10;
   console.log('outside nextPage() after is :'+$scope.after);
 
     $scope.nextPage = function($scope,$http) {
     if ($scope.busy) return;
-    $scope.busy = true;
+    $scope.busy = TRUE;
  //make a post request to get article with data of id article id
       console.log('Inside nextPage() after is :'+$scope.after);
       console.log('value of busy is before requset :'+$scope.busy);
