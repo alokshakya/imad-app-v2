@@ -5,7 +5,7 @@ app.controller('DemoController',['$scope','$http', function($scope, $http) {
 
   $scope.after=10;
   console.log('outside nextPage() after is :'+$scope.after);
-  console.log('outside nextPage() busy is :'+$scope.busy.busy);
+  console.log('outside nextPage() busy is :'+$scope.busy);
 
     $scope.nextPage = function($scope,$http) {
        console.log('inside nextPage() busy is :'+$scope.busy);
