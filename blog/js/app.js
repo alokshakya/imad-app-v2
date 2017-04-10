@@ -1,22 +1,23 @@
-var app=angular.module("myApp", ['infinite-scroll']);
-app.controller('DemoController', function($scope, Reddit) {
-  $scope.reddit = new Reddit();
-});
+app.controller('DemoController', function($scope, $http) {
+  $scope.articles=[];
+  $scope.busy= {"busy":"0"};
 
-// Reddit constructor function to encapsulate HTTP and pagination logic
-app.factory('Reddit', function($http,$scope) {
-  var Reddit = function() {
-    $scope.articles = [];
-    $scope.busy = false;
-    $scope.after = '';
-  };
+  $scope.after=10;
+  console.log('outside nextPage() after is :'+$scope.after);
+  console.log('outside nextPage() busy is :'+$scope.busy.busy);
 
-  Reddit.prototype.nextPage = function() {
-    if (this.busy) return;
-    this.busy = true;
+    $scope.nextPage = function($scope,$http) {
+       // console.log('inside nextPage() busy is :'+$scope.busy);
+       
+  
+    
+ //make a post request to get article with data of id article id
+      console.log('Inside nextPage() after is :'+$scope.after);
+      
+      var article_id=$scope.after;
+      console.log('article_id is :'+article_id);
 
-    var url = "http://alokshakya.imad.hasura-app.io/articles/" + this.after +"";
-    $http({method: 'GET', url: '/article/'+article_id+''}).
+      $http({method: 'GET', url: '/article/'+article_id+''}).
         then(function(response) {
           $scope.status = response.status;
           $scope.articles.push(response.data);
@@ -25,10 +26,10 @@ app.factory('Reddit', function($http,$scope) {
         }, function(response) {
           $scope.data = response.data || 'Request failed';
           $scope.status = response.status;
-      }).bind(this);
+      });
+ //end of poat request with id
+   
   };
+  console.log('value of busy is after requset is completed :'+$scope.busy.busy);
 
-  return Reddit;
 });
-
-
