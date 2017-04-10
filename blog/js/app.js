@@ -9,7 +9,7 @@ app.controller('DemoController', function($scope, $http) {
 
     $scope.nextPage = function($scope,$http) {
        // console.log('inside nextPage() busy is :'+$scope.busy);
-        console.log('inside nextPage() article is :'+$scope.busy);
+       // console.log('inside nextPage() article is :'+$scope.busy);
     //if ($scope.busy) return;
    // $scope.busy = 'true';
     
