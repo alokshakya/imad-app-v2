@@ -23,8 +23,8 @@ app.factory('Reddit', function($http) {
       $http({method: 'POST', url: '/comments',data: { article_id: article_id }, cache: $templateCache}).
         then(function(response) {
           $scope.status = response.status;
-          this.articles = response.data;
-          this.after=1+articles.id;
+          this.articles.push(response.data);
+          this.after=1+this.articles[this.articles.length-1].id;
           this.busy=false;
         }, function(response) {
           $scope.data = response.data || 'Request failed';
