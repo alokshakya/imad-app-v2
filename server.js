@@ -35,7 +35,7 @@ app.get('/js/ng-infinite-scroll.min.js', function (req, res) {
 app.get('/js/controllers/MainController.js', function (req, res) {
   res.sendFile(path.join(__dirname, 'blog/js/controllers', 'MainController.js'));
 });
-app.get('/js/controllers/NextPageController', function (req, res) {
+app.get('/js/controllers/NextPageController.js', function (req, res) {
   res.sendFile(path.join(__dirname, 'blog/js/controllers', 'NextPageController.js'));
 });
 app.get('/js/controllers/createUserCtrl.js', function (req, res) {
