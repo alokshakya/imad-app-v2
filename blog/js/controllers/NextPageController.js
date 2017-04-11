@@ -8,14 +8,13 @@ app.controller('NextPageController',['$scope','$http',functioin($scope,$http){
 		$scope.busy=true;
 		$http({
 			method:'GET',
-			url:'/article/'+page+'',
-		}).then(function(response)){
+			url:'/article/'+page+''
+		}).then(function(response){
 			$scope.articles.push(response.data);
 			$scope.busy=false;
-		}
-		function(){
+		},function(response){
 			$scope.busy=false;
-		})
+		});
 
 	}
 	//end of defined function
@@ -24,7 +23,7 @@ app.controller('NextPageController',['$scope','$http',functioin($scope,$http){
 	GetArticleData($scope.currentPage);
 
 	//now implement nextPage() function
-	$scope.nextPage = function{
+	$scope.nextPage = function(){
 		if($scope.busy===true) return;
 		$scope.currentPage+=1;
 		GetArticleData($scope.currentPage);
