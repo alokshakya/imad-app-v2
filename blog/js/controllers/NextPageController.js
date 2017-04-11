@@ -12,7 +12,7 @@ app.controller('NextPageController',['$scope','$http',functioin($scope,$http){
 		}).then(function(response)){
 			$scope.articles.push(response.data);
 			$scope.busy=false;
-		},
+		}
 		function(){
 			$scope.busy=false;
 		})
