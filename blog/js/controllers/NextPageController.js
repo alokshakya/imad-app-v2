@@ -1,21 +1,24 @@
 app.controller("NextPageController", function ($scope, $http, $templateCache) {
-     $scope.article={"title":"","category":"","content":"",busy:false};
+     $scope.article={busy:false};
+     $scope.article.articles=[];
+     $scope.article.id = 10;
     
       $scope.article.nextPage = function() {
           console.log("state of busy is : "+$scope.article.busy);
-          if(!$scope.article.busy){
-              alert('busy is false');
+          if($scope.article.busy){
+              return;
           }
+          $scope.article.busy=true;
       $scope.code = null;
       $scope.response = null;
       var data1=$scope.article;
-      console.log('username :'+data1.name);
-      console.log('password :'+data1.password);
+      
 
-      $http({method: 'POST', url: '/createArticle',data: { title: data1.title, category: data1.category, content: data1.content }, cache: $templateCache}).
+      $http({method: 'GET', url: '/articles/'+$scope.article.id+'', cache: $templateCache}).
         then(function(response) {
           $scope.status = response.status;
-          $scope.data = response.data;
+          $scope.article.articles.push(data);
+          $scope.article.busy=false;
         }, function(response) {
           $scope.data = response.data || 'Request failed';
           $scope.status = response.status;
