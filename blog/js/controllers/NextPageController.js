@@ -28,7 +28,7 @@ app.controller("NextPageController", function ($scope, $http, $templateCache) {
            $scope.article.articles.push(response.data[i]);
         } 
           
-          $scope.article.id=$scope.article.id+3;
+          $scope.article.id=$scope.article.id+2;
           $scope.article.busy=false;
         }, function(response) {
           $scope.data = response.data || 'Request failed';
