@@ -2,10 +2,11 @@ app.controller("NextPageController", function ($scope, $http, $templateCache) {
      $scope.article={busy:false};
      $scope.article.articles=[];
      $scope.article.id = 10;
+     $scope.article.end=false;
     
       $scope.article.nextPage = function() {
           console.log("state of busy is : "+$scope.article.busy);
-          if($scope.article.busy){
+          if(($scope.article.busy) && (!$scope.article.end) ){
               return;
           }
           $scope.article.busy=true;
@@ -18,7 +19,8 @@ app.controller("NextPageController", function ($scope, $http, $templateCache) {
         then(function(response) {
           $scope.status = response.status;
           if(response.data.length===0){
-              $scope.article.busy=true;
+              //$scope.article.busy=true;
+              $scope.article.end=true;
               return;
           }
           $scope.article.articles.push(response.data[0]);
