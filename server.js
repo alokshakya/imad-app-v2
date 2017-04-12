@@ -205,7 +205,7 @@ app.get('/articles/:article_id', function(req, res){
             res.status(500).send(err.toString());
         }
         else{
-            res.send(JSON.stringify(result.rows[0]));
+            res.send(JSON.stringify(result.rows));
         }
     });
     
