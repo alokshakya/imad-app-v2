@@ -1,34 +1,22 @@
-app.controller('NextPageController',['$scope','$http',functioin($scope,$http){
-	$scope.currentPage=10;
-	$scope.totalPage=100;
-	$scope.articles=[];
+app.controller("NextPageController", function ($scope, $http, $templateCache) {
+     $scope.article={"title":"","category":"","content":"",state:false};
+    
+      $scope.nextPage = function() {
+          console.log("state is "+$scope.article.state);
+      $scope.code = null;
+      $scope.response = null;
+      var data1=$scope.article;
+      console.log('username :'+data1.name);
+      console.log('password :'+data1.password);
 
-	//define function to get article by page number
-	function GetArticleData(page){
-		$scope.busy=true;
-		$http({
-			method:'GET',
-			url:'/article/'+page+''
-		}).then(function(response){
-			$scope.articles.push(response.data);
-			$scope.busy=false;
-		},function(response){
-			$scope.busy=false;
-		});
-
-	}
-	//end of defined function
-
-	// call function for first time to get first article on page
-	GetArticleData($scope.currentPage);
-
-	//now implement nextPage() function
-	$scope.nextPage = function(){
-		if($scope.busy===true) return;
-		$scope.currentPage+=1;
-		GetArticleData($scope.currentPage);
-
-	};
-	//end of next page function
-
-}]);
+      $http({method: 'POST', url: '/createArticle',data: { title: data1.title, category: data1.category, content: data1.content }, cache: $templateCache}).
+        then(function(response) {
+          $scope.status = response.status;
+          $scope.data = response.data;
+        }, function(response) {
+          $scope.data = response.data || 'Request failed';
+          $scope.status = response.status;
+      });
+    };
+      
+});
