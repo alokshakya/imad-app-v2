@@ -19,11 +19,34 @@
     
   </head>
   <body ng-app="myApp">
-    <div class="header">
-      <div class="container">
-        <h1>Alok Shakya</h1>
-      </div>
-    </div>
+<!-- Start of Navigation Bar-->
+		<nav class="navbar navbar-inverse navbar-static-top no-margin" role="navigation">
+				<div class="container-fluid">
+				<div class="navbar-header">
+      				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-knit-navbar-collapse-1" aria-expanded="false">
+        				<span class="sr-only">Toggle navigation</span>
+        				<span class="icon-bar"></span>
+        				<span class="icon-bar"></span>
+        				<span class="icon-bar"></span>
+      					</button>
+      
+					<a class="navbar-brand" href="https://www.facebook.com/alok.shakya.56">Alok Shakya</a>
+				</div>
+				<div class="collapse navbar-collapse navbar-right" id="bs-knit-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+						<li><a href="#"><span class="glyphicon glyphicon-home" style="color: #fff;"></span> Create Article</a></li>
+						<li><a href="#"><span class="glyphicon glyphicon-text-background" style="color: #fff;"></span> About</a></li>
+						
+						<li><a href="#signup" data-toggle="modal"><span class="glyphicon glyphicon-user" style="color: #fff;"></span> SignUp</a></li>
+            <li><a href="#logIn" data-toggle="modal"><span class="glyphicon glyphicon-log-in" style="color: #fff;"></span> Login</a></li>
+						
+        			</ul>
+    			</div>
+    			</div>
+
+		</nav>
+<!-- End of Navigation Bar -->
+
  
   <div class="conatainer" ng-controller="createUserCtrl">
         <legend>Sign Up Here</legend>
