@@ -203,7 +203,7 @@ app.get('/articles/:article_id', function(req, res){
     var start=req.params.article_id;
     //var end = parseInt(start)+2;
     console.log('start id :'+start);
-    console.log('end id :'+end);
+   // console.log('end id :'+end);
     pool.query("SELECT * FROM articles WHERE id=$1",[start], function(err, result){
         if(err){
             res.status(500).send(err.toString());
