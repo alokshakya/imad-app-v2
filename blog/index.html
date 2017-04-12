@@ -73,14 +73,16 @@
 
 <hr>
 <br>
-     <div class="" ng-controller="ArticleController">
+<div class="row">
+     <div class="col-md-8 col-md-offset-2 col-sm-12" ng-controller="ArticleController">
       <div class="container">
           <label class="title">Search: <input ng-model="searchTitle"></label>
           <div class="container" ng-repeat="article in articles | filter:searchTitle">
           <article-Info info="article"></article-Info><hr>
       </div>
     </div>
-   
+    </div>
+</div>   
 <div ng-controller="MainController">
 <div infinite-scroll='nextPage()' infinite-scroll-disabled='{{busy}}' infinite-scroll-distance='1' >
      <div class="container" ng-repeat="article in articles | filter:searchTitle">
