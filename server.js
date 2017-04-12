@@ -204,7 +204,7 @@ app.get('/articles/:article_id', function(req, res){
     var end = parseInt(start)+5;
     console.log('start id :'+start);
     console.log('end id :'+end);
-    pool.query("SELECT * FROM articles WHERE id >=$1 AND id<=$2",[start,end], function(err, result){
+    pool.query("SELECT * FROM articles WHERE id >=$1 AND id<$2",[start,end], function(err, result){
         if(err){
             res.status(500).send(err.toString());
         }
