@@ -23,8 +23,12 @@ app.controller("NextPageController", function ($scope, $http, $templateCache) {
               $scope.article.end=true;
               return;
           }
-          $scope.article.articles.push(response.data[0]);
-          $scope.article.id=$scope.article.id+1;
+          //loading 5 articles at a time.
+          for (var i = 0; i < response.data.length; i++) {
+           $scope.article.articles.push(response.data[i]);
+        } 
+          
+          $scope.article.id=$scope.article.id+5;
           $scope.article.busy=false;
         }, function(response) {
           $scope.data = response.data || 'Request failed';
