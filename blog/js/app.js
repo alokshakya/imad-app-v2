@@ -1,3 +1,4 @@
+var app = angular.module('myApp',['ngInfiniteScroll'])
 app.controller('NextPageController',['$scope','$http',functioin($scope,$http){
 	$scope.currentPage=10;
 	$scope.totalPage=100;
