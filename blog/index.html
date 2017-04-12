@@ -109,7 +109,7 @@
 -->    
     
 <div ng-controller="NextPageController">
-<div infinite-scroll='article.nextPage()' infinite-scroll-disabled='article.busy' infinite-scroll-distance='1' >
+<div infinite-scroll='article.nextPage()' infinite-scroll-disabled='article.busy' infinite-scroll-distance='2' >
      <div class="container" ng-repeat="article in article.articles | filter:searchTitle">
           <article-Info info="article"></article-Info><hr>
           
