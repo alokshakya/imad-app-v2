@@ -1,1 +1,1 @@
-var ap = angular.module('myApp', ['infinite-scroll']);
+var app = angular.module('myApp', ['infinite-scroll']);
