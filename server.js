@@ -200,7 +200,9 @@ app.get('/logout', function(req,res){
 // getting articles information with no SQL injection
 app.get('/articles/:article_id', function(req, res){
     // database functioning cheking
-    pool.query("SELECT * FROM articles WHERE id BETWEEN $1 AND $2",[req.params.article_id,req.params.article_id+5], function(err, result){
+    var start=req.prams.article_id;
+    var end = start+5;
+    pool.query("SELECT * FROM articles WHERE id BETWEEN $1 AND $2",[start,end], function(err, result){
         if(err){
             res.status(500).send(err.toString());
         }
