@@ -17,6 +17,10 @@ app.controller("NextPageController", function ($scope, $http, $templateCache) {
       $http({method: 'GET', url: '/articles/'+$scope.article.id+'', cache: $templateCache}).
         then(function(response) {
           $scope.status = response.status;
+          if(response.data.length===0){
+              $scope.article.busy=true;
+              return;
+          }
           $scope.article.articles.push(response.data[0]);
           $scope.article.id=$scope.article.id+1;
           $scope.article.busy=false;
