@@ -1,10 +1,10 @@
 app.controller("NextPageController", function ($scope, $http, $templateCache) {
-     $scope.article={"title":"","category":"","content":"",busy:true};
+     $scope.article={"title":"","category":"","content":"",busy:false};
     
       $scope.article.nextPage = function() {
           console.log("state of busy is : "+$scope.article.busy);
-          if($scope.article.busy){
-              alert('busy is true');
+          if(!$scope.article.busy){
+              alert('busy is false');
           }
       $scope.code = null;
       $scope.response = null;
