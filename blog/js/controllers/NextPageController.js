@@ -19,7 +19,7 @@ app.controller("NextPageController", function ($scope, $http, $templateCache) {
         then(function(response) {
           $scope.status = response.status;
           if(response.data.length===0){
-              //$scope.article.busy=true;
+              $scope.article.busy=false;
               $scope.article.end=true;
               return;
           }
