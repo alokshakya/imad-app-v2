@@ -1,8 +1,8 @@
 app.controller("NextPageController", function ($scope, $http, $templateCache) {
-     $scope.article={"title":"","category":"","content":"",state:false};
+     $scope.article={"title":"","category":"","content":"",busy:false};
     
       $scope.nextPage = function() {
-          console.log("state is "+$scope.article.state);
+          console.log("state of busy is : "+$scope.article.state);
       $scope.code = null;
       $scope.response = null;
       var data1=$scope.article;
