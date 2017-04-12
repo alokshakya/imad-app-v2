@@ -18,6 +18,7 @@ app.controller("NextPageController", function ($scope, $http, $templateCache) {
         then(function(response) {
           $scope.status = response.status;
           $scope.article.articles.push(response.data[0]);
+          $scope.article.id=$scope.article.id+1;
           $scope.article.busy=false;
         }, function(response) {
           $scope.data = response.data || 'Request failed';
