@@ -202,7 +202,7 @@ app.get('/articles/:article_id', function(req, res){
     // database functioning cheking
     var start=req.params.article_id;
     var end = start+5;
-    pool.query("SELECT * FROM articles WHERE id BETWEEN $1 AND $2",[start,end], function(err, result){
+    pool.query("SELECT * FROM articles WHERE id >=$1 AND id<=$2",[start,end], function(err, result){
         if(err){
             res.status(500).send(err.toString());
         }
