@@ -116,19 +116,7 @@ html, body {
    transition: background 500ms;
 }
 
-.footer {
- text-align: center;
- margin: 80px 0 110px;
-}
 
-.footer h2 {
- font-size: 24px;
- margin-bottom: 25px;
-}
-
-.footer img {
-   margin: 0 10px;
-}
 .hidden{
     display:none;
 }
@@ -158,4 +146,44 @@ html, body {
 .author{
     font-family: Comic Sans MS;
     font-style: italic;
+}
+.site-footer
+{
+	background-color: #222;
+	color:#fff;
+	margin-top: 0px;
+	padding-top: 0px;
+}
+.footer-nav
+{
+	text-align: right;
+	list-style: none;
+
+}
+.footer-nav li
+{
+	display: inline;
+
+}
+.footer-nav li:not(:first-child):before
+{
+	content: '|';
+	padding: 0px 10px;
+}
+.footer-nav a 
+{
+	color: #b2b2b2;
+
+}
+.footer-nav a:hover
+{
+	color:#fff;
+	text-decoration: none;
+}
+.bottom-footer
+{
+	border-top: 1px solid #b2b2b2;
+	margin-top:10px;
+	padding-top:10px;
+	color: #b2b2b2;
 }
