@@ -26,7 +26,16 @@ app.use(session({
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'blog', 'index.html'));
 });
-app.get('/js/app.js', function (req, res) {
+app.get('/img/fb.png', function (req, res) {
+  res.sendFile(path.join(__dirname, 'blog', 'fb.png'));
+});
+app.get('/img/twit.png', function (req, res) {
+  res.sendFile(path.join(__dirname, 'blog', 'twit.png'));
+});
+app.get('/img/insta.png', function (req, res) {
+  res.sendFile(path.join(__dirname, 'blog', 'insta.png'));
+});
+app.get('/img/app.js', function (req, res) {
   res.sendFile(path.join(__dirname, 'blog/js', 'app.js'));
 });
 app.get('/js/ng-infinite-scroll.min.js', function (req, res) {
