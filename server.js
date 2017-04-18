@@ -29,6 +29,9 @@ app.get('/', function (req, res) {
 app.get('/img/fb.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'blog', 'fb.png'));
 });
+app.get('/img/loading.gif', function (req, res) {
+  res.sendFile(path.join(__dirname, 'blog', 'loading.gif'));
+});
 app.get('/img/twit.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'blog', 'twit.png'));
 });
